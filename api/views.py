@@ -30,7 +30,7 @@ class ContentViewSet(viewsets.ModelViewSet):
     """
     queryset            = Content.objects.all().order_by('title')
     serializer_class    = ContentSerializer
-    # permission_classes  = (IsAuthenticated, )
+    permission_classes  = (IsAuthenticated, )
 
     @action(detail=False)
     def overview(self, request):
@@ -73,7 +73,7 @@ class TagViewSet(viewsets.ModelViewSet):
     """
     queryset            = Tag.objects.all().order_by('title')
     serializer_class    = TagSerializer
-    # permission_classes  = (IsAuthenticated, )
+    permission_classes  = (IsAuthenticated, )
 
     def retrieve(self, request, pk=None):
         '''
